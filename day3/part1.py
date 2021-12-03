@@ -1,12 +1,12 @@
-import sys
-sys.path.append('../')
 from splitInputToList import openFileToTab
 inputValues = openFileToTab()
-count = [0]*len(inputValues[0])
-for i in range(len(inputValues)):
-    inputValues[i] = list(str(inputValues[i]))
+del inputValues[(len(inputValues)-1)]
 print(inputValues)
-for i in range(len(count)):
-    for j in range(len(inputValues)):
-        count[i] += 1 if inputValues[i][j] == "1" else 0
+count = [0] * 12
+for i in range(len(inputValues)):
+    entry = str(inputValues[i])
+    for i in range(len(entry)):
+        if entry[i] == "1":
+            count[i] += 1
+
 print(count)

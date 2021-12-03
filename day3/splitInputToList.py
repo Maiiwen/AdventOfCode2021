@@ -3,5 +3,4 @@ def openFileToTab():
     file = file.read()
     tab = file.split("\n")
     del tab[len(tab)-1]
-    print(tab)
     return file.split("\n")
